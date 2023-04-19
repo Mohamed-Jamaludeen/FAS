@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Falcon Aviation</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.0/bootstrap-table.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+<!-- <link href="https://fonts.googleapis.com/css2?family=FAMILY_NAME:wght@WEIGHT_OR_RANGE&display=swap" rel="stylesheet"> -->
+
+<body>
+[% INCLUDE top_nav.tt %]
+<h1 style="text-align: center;">Flights</h1>
+    <br>
+
+<div class="container">
+      <!-- <table class="table table-bordered"> -->
+        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+                <th>Flight</th>
+                <th>Operator</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>STD</th>
+                <th>ETD</th>
+                <th>Flight Status</th>
+                <th>Total PAX</th>
+                <th>Checked In</th>
+                <th>Boarded</th>
+                <th>To Board</th>
+                <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        [% FOREACH fl IN flights %]
+       
+          <tr>
+            <td><a href="/passengers/[% fl.flightid %]">[% fl.flightno %]</a></td>
+            <td>Falcon Aviation</td>
+            <td>[% fl.origin %]</td>
+            <td>[% fl.destination %]</td>
+            <td>[% fl.departure %]</td>
+            <td>[% fl.arrival %]</td>
+            <td>Open</td>
+            <td>[% fl.passcnt %]</td>
+            <td>[% fl.chincnt %]</td>
+            <td>[% fl.bdgcnt %]</td>
+            <td>[% fl.passcnt - fl.bdgcnt %]</td>
+            <td>
+              <button type="button" class="btn btn-primary" ><i class="far fa-eye"></i></button>
+              <button type="button" class="btn btn-success" onclick="window.location.href='/addpass/'+[% fl.flightid %]"><i class="fas fa-edit"></i></button>
+              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+            </td>
+          </tr>
+[% END %]
+
+         
+        </tbody>
+      </table>
+  
+</div>
+
+</div>
+
+
+
+</body>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+  
+ 
+  
+  var table = $('#example').DataTable();//End of create main table
+
+  
+//   $('#example tbody').on( 'click', 'tr', function () {
+   
+//     alert(table.row( this ).data()[0]);
+
+// } );
+
+
+
+});
+
+
+</script>
+<style type="text/css">
+	/*@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600&display=swap');*/
+	body {
+  /*margin: 2rem;*/
+  font-weight:bold;
+  font-size: large;
+}
+h1 {
+	text-align: center;
+}
+
+
+/*starts*/
+.container {
+  padding: 2rem 0rem;
+  max-width: 100%;
+}
+
+h4 {
+  margin: 2rem 0rem 1rem;
+}
+
+.table-image {
+  td,
+  th {
+    vertical-align: middle;
+  }
+}
+
+/*ends*/
+
+
+</style>
+</html>

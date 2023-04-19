@@ -1,0 +1,165 @@
+
+<!-- <button class="btn btn-large btn-success fas fa-plus" id="addRow"></button> -->
+<button class="btn btn-large btn-success fas fa-plus" id="addRow" type="button"></button>
+  <table class="table table-bordered table-sm" id="myTable">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Code</th>
+        <th>Comments</th>
+        <th>Created By</th>
+        <th class="fit">#</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+    <template id="tplRow">
+      <tr>
+        <td></td>
+        <td>
+          <select name="employee">
+            <option value="ACC - Accompanied Passenger">ACC - Accompanied Passenger</option>
+<option value="ADA - Agent Discount AD75N1">ADA - Agent Discount AD75N1</option>
+<option value="ADD - Adult with Discount">ADD - Adult with Discount</option>
+<option value="ADN - Agent Discount AD50N1">ADN - Agent Discount AD50N1</option>
+<option value="ADT - Adult">ADT - Adult</option>
+<option value="AGT - Agent">AGT - Agent</option>
+<option value="ANN - Age Restricted Companion">ANN - Age Restricted Companion</option>
+<option value="ASB - Standby Passenger">ASB - Standby Passenger</option>
+<option value="ASF - Air-sea Fare">ASF - Air-sea Fare</option>
+<option value="AST - Airline Staff Standby">AST - Airline Staff Standby</option>
+<option value="BAG - Baggage">BAG - Baggage</option>
+<option value="BLD - Blind Passenger">BLD - Blind Passenger</option>
+<option value="BNN - Adult with Age Restriction">BNN - Adult with Age Restriction</option>
+<option value="BRV - Bereavement Passenger">BRV - Bereavement Passenger</option>
+<option value="BUD - Airline Buddy Standby">BUD - Airline Buddy Standby</option>
+<option value="CCH - Card Carrying Holder(s)">CCH - Card Carrying Holder(s)</option>
+<option value="CCM - Card Carrying Member">CCM - Card Carrying Member</option>
+<option value="CDT - Discount Cardholder France and Overseas Depts">CDT - Discount Cardholder France and Overseas Depts</option>
+<option value="CEV - Leisure Cardholder w/in France">CEV - Leisure Cardholder w/in France</option>
+<option value="CFM - Cardholder w/in France">CFM - Cardholder w/in France</option>
+<option value="CLG - Clergy">CLG - Clergy</option>
+<option value="CMA - Adult with Companion">CMA - Adult with Companion</option>
+<option value="CMM - Commuter">CMM - Commuter</option>
+<option value="CMP - Companion">CMP - Companion</option>
+<option value="CNT - Carnet Coupon Travel">CNT - Carnet Coupon Travel</option>
+<option value="CNV - Convention Passenger">CNV - Convention Passenger</option>
+<option value="CPN - Coupon Discount">CPN - Coupon Discount</option>
+<option value="CSB - Child Standby">CSB - Child Standby</option>
+<option value="CTZ - Category Z">CTZ - Category Z</option>
+<option value="CXB - Child Standby">CXB - Child Standby</option>
+<option value="DIS - Disabled person">DIS - Disabled person</option>
+<option value="DNN - Child of European Parliament Member">DNN - Child of European Parliament Member</option>
+<option value="DOD - Department of Defense Passenger">DOD - Department of Defense Passenger</option>
+<option value="ECH - Electronic Ticket discount Child">ECH - Electronic Ticket discount Child</option>
+<option value="EDT - Electronic Ticket discount Adult">EDT - Electronic Ticket discount Adult</option>
+<option value="EMI - Emigrant">EMI - Emigrant</option>
+<option value="ENF - Electronic Ticket discount Infant">ENF - Electronic Ticket discount Infant</option>
+<option value="ENN - Group Inclusive Tour Child">ENN - Group Inclusive Tour Child</option>
+<option value="FFP - Frequent Flyer - Preferred">FFP - Frequent Flyer - Preferred</option>
+<option value="FFY - Frequent Flyer">FFY - Frequent Flyer</option>
+<option value="FIF - Family Intra-France">FIF - Family Intra-France</option>
+<option value="FNF - Family Plan Infant">FNF - Family Plan Infant</option>
+<option value="FNN - Family Plan Child">FNN - Family Plan Child</option>
+<option value="GCF - Government Contract Passenger">GCF - Government Contract Passenger</option>
+<option value="GCT - City/County Government Travel">GCT - City/County Government Travel</option>
+<option value="GDP - Government Employee Dependent">GDP - Government Employee Dependent</option>
+<option value="GEX - Government Exchange">GEX - Government Exchange</option>
+<option value="GIT - Group Inclusive Tour">GIT - Group Inclusive Tour</option>
+<option value="GNN - Group Child">GNN - Group Child</option>
+<option value="GRP - Group">GRP - Group</option>
+<option value="GSP - Group School Party">GSP - Group School Party</option>
+<option value="GST - State Government Passenger">GST - State Government Passenger</option>
+<option value="GVT - Government Travel">GVT - Government Travel</option>
+<option value="HOF - Head of Family">HOF - Head of Family</option>
+<option value="ICP - Incentive Certificates">ICP - Incentive Certificates</option>
+<option value="INF - Infant without a Seat">INF - Infant without a Seat</option>
+<option value="INN - Individual Inclusive Tour Child">INN - Individual Inclusive Tour Child</option>
+<option value="INS - Infant with a Seat">INS - Infant with a Seat</option>
+<option value="INY - Infant Accompanied By a Youth">INY - Infant Accompanied By a Youth</option>
+<option value="ITF - Tour Operator Fares for Infants">ITF - Tour Operator Fares for Infants</option>
+<option value="ITX - Individual Inclusive Tour">ITX - Individual Inclusive Tour</option>
+<option value="JCB - Contract Bulk Adult">JCB - Contract Bulk Adult</option>
+<option value="JEB - Journalist of European Cabinet">JEB - Journalist of European Cabinet</option>
+<option value="JEC - Journalist of European Committee">JEC - Journalist of European Committee</option>
+<option value="JEP - Journalist of European Parliament">JEP - Journalist of European Parliament</option>
+<option value="JNF - Contract Bulk Infant without a Seat">JNF - Contract Bulk Infant without a Seat</option>
+<option value="JNN - Contract Bulk Child">JNN - Contract Bulk Child</option>
+<option value="JNS - Contract Bulk Infant with a Seat">JNS - Contract Bulk Infant with a Seat</option>
+<option value="LBR - Laborer/Worker">LBR - Laborer/Worker</option>
+<option value="LIF - Laborer/Worker Infant">LIF - Laborer/Worker Infant</option>
+<option value="LNN - Laborer/Worker Child">LNN - Laborer/Worker Child</option>
+<option value="LTC - Government Employee on Leave">LTC - Government Employee on Leave</option>
+<option value="MBT - Military  Basic Training Graduate">MBT - Military  Basic Training Graduate</option>
+<option value="MCR - Military Charter Passenger">MCR - Military Charter Passenger</option>
+<option value="MCS - Mastercard Purchase Only">MCS - Mastercard Purchase Only</option>
+<option value="MED - Patients Travelling for Medical Treatment">MED - Patients Travelling for Medical Treatment</option>
+<option value="MEP - Member of European Parliament">MEP - Member of European Parliament</option>
+<option value="MIL - Military Confirmed">MIL - Military Confirmed</option>
+<option value="MIR - Military Reserves on Active Duty">MIR - Military Reserves on Active Duty</option>
+<option value="MIS - Missionary">MIS - Missionary</option>
+<option value="MNN - Military Child">MNN - Military Child</option>
+<option value="MPA - Military Parents/Parents In Law">MPA - Military Parents/Parents In Law</option>
+<option value="MRE - Retired Military/Military Dependent">MRE - Retired Military/Military Dependent</option>
+<option value="MSB - Military Standby">MSB - Military Standby</option>
+<option value="MSG - Multi State Government Passenger">MSG - Multi State Government Passenger</option>
+<option value="MUS - Military/DOD based in USA">MUS - Military/DOD based in USA</option>
+<option value="MXS - Military/DOD not based in USA">MXS - Military/DOD not based in USA</option>
+<option value="NAT - NATO Passenger">NAT - NATO Passenger</option>
+<option value="NCV - Non Discountable Fare">NCV - Non Discountable Fare</option>
+<option value="NSB - Nonrevenue Standby">NSB - Nonrevenue Standby</option>
+<option value="NTL - National/Citizen of a Specified Country">NTL - National/Citizen of a Specified Country</option>
+<option value="OEB - Official of European Cabinet">OEB - Official of European Cabinet</option>
+<option value="OEC - Official of European Committee">OEC - Official of European Committee</option>
+<option value="OEI - Official of European Committee Institute">OEI - Official of European Committee Institute</option>
+<option value="OEP - Official of European Parliament">OEP - Official of European Parliament</option>
+<option value="OTS - Passengers Occupying Two Seats">OTS - Passengers Occupying Two Seats</option>
+<option value="PCR - Charter Adult Passenger">PCR - Charter Adult Passenger</option>
+<option value="PIL - Pilgrim">PIL - Pilgrim</option>
+<option value="PNN - Charter Child Passenger">PNN - Charter Child Passenger</option>
+<option value="REC - Military Recruit">REC - Military Recruit</option>
+<option value="REF - Refugee">REF - Refugee</option>
+<option value="SCC - Senior Discounted Companion">SCC - Senior Discounted Companion</option>
+<option value="SDB - Student Standby">SDB - Student Standby</option>
+<option value="SEA - Seaman">SEA - Seaman</option>
+<option value="SEP - Spouse of European Parliament">SEP - Spouse of European Parliament</option>
+<option value="SNN - Restricted Senior Citizen With Multiple Age Reqs">SNN - Restricted Senior Citizen With Multiple Age Reqs</option>
+<option value="SPA - Accompanied Spouse">SPA - Accompanied Spouse</option>
+<option value="SPH - Head of Family Spouse">SPH - Head of Family Spouse</option>
+<option value="SPS - Spouse">SPS - Spouse</option>
+<option value="SPT - Sports Passenger">SPT - Sports Passenger</option>
+<option value="SRC - Senior Citizen">SRC - Senior Citizen</option>
+<option value="STR - State Resident">STR - State Resident</option>
+<option value="STU - Student">STU - Student</option>
+<option value="TEA - Teacher(s)">TEA - Teacher(s)</option>
+<option value="TIM - Timesaver">TIM - Timesaver</option>
+<option value="TNN - Frequent Flyer Child">TNN - Frequent Flyer Child</option>
+<option value="TUR - Tour Conductor">TUR - Tour Conductor</option>
+<option value="TUX - Restricted Tour Conductor">TUX - Restricted Tour Conductor</option>
+<option value="UDA - Agent Discount UD75N1">UDA - Agent Discount UD75N1</option>
+<option value="UDN - Agent Discount UD50N1">UDN - Agent Discount UD50N1</option>
+<option value="UNN - Unaccompanied Child">UNN - Unaccompanied Child</option>
+<option value="UNV - University Employee">UNV - University Employee</option>
+<option value="VAC - Visit Another Country Adult">VAC - Visit Another Country Adult</option>
+<option value="VAG - Group Visit Another Country Adult">VAG - Group Visit Another Country Adult</option>
+<option value="VFR - Visit Friends/Relatives">VFR - Visit Friends/Relatives</option>
+<option value="VNN - Visit Another Country Child">VNN - Visit Another Country Child</option>
+<option value="WEB - Internet Fares">WEB - Internet Fares</option>
+<option value="YCB - Senior Citizen Standby">YCB - Senior Citizen Standby</option>
+<option value="YCR - Charter Youth Passenger">YCR - Charter Youth Passenger</option>
+<option value="YNN - Government Travel Child">YNN - Government Travel Child</option>
+<option value="YSB - Youth Standby">YSB - Youth Standby</option>
+<option value="YTH - Youth Confirmed">YTH - Youth Confirmed</option>
+<option value="ZNN - Group Visit Another Country Child">ZNN - Group Visit Another Country Child</option>
+
+          </select>
+        </td>
+        <td>
+          <input type="text" name="comments">
+        </td>
+        <td contenteditable="true">Admin</td>
+        <td>
+          <button class="btn btn-danger fas fa-trash delRow"></button>
+        </td>
+      </tr>
+    </template>

@@ -1,0 +1,72 @@
+<div style="background-color: black;height:12%">
+			<img style="height: 100%" src="http://www.falconaviation.ae/wp-content/uploads/2017/08/logo.jpg">
+			<!-- <h1 style="display: inline-block;text-align: center;color: red">Falcon Aviation </h1>
+			<text id="currentuser" style="font-size: 22px;padding-left: 215px;">[% IF selecteduser %][% selecteduser %][% ELSE %][% userprofile.Name %][% END %]</text> -->
+			
+
+
+		<div class="navigation">
+  
+	<a class="button" href="/logout">
+  	<img src="/static/images/poweroff.png" style="height:25px;border-radius: 50px;float: left;">
+  
+  <div class="logout">LOGOUT</div>
+
+	</a>
+  
+</div>
+			
+		</div>
+
+<style type="text/css">
+	.navigation {
+  width: 100%;
+  background-color: black;
+}
+
+/*img {
+  width: 25px;
+  
+}*/
+
+.logout {
+  font-size: .8em;
+  font-family: 'Oswald', sans-serif;
+	position: relative;
+  right: -3px;
+  bottom: 0px;
+  overflow: hidden;
+  letter-spacing: 0px;
+  opacity: 0;
+  transition: opacity .45s;
+  -webkit-transition: opacity .35s;
+  
+}
+
+.button {
+	text-decoration: none;
+	float: right;
+  padding: 25px;
+  /*margin: 15px;*/
+  color: white;
+  width: 25px;
+  background-color: black;
+  transition: width .35s;
+  -webkit-transition: width .35s;
+  overflow: hidden;
+  margin-top:-7%;
+
+}
+
+a:hover {
+  width: 100px;
+}
+
+a:hover .logout{
+  opacity: .9;
+}
+
+a {
+  text-decoration: none;
+}
+</style>

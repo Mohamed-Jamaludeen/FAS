@@ -1,0 +1,299 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ticket</title>
+</head>
+<body> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><script type="text/javascript">
+
+	$( document ).ready(function() {
+		// myval = [% jamal %];
+		myval = 'Jamal';
+		$(".qr-code").attr("src", "https://chart.googleapis.com/chart?cht=qr&chl=" + myval + "&chs=160x160&chld=L|0");
+	});
+</script>
+<div class="ticket inverse" id="ticket">
+  <header>
+    <div class="company-name">
+      Falcon aviation
+    </div>
+    <div class="gate">
+      <div>
+        <img src="/static/images/logo_trans.png">
+      </div>
+      <div>
+        B4
+      </div>
+    </div>
+  </header>
+  <section class="name">
+  	<span>Mohamed Jamaludeen Mohamed Elias</span>
+  </section>
+  <section class="airports">
+    <div class="airport">
+      <div class="airport-name">
+        OMAD
+      </div>
+      <div class="airport-code">
+        OMAD
+      </div>
+      <div class="dep-arr-label">
+        Departing
+      </div>
+      <div class="time">
+        7:45am
+      </div>
+    </div>
+    <div class="airport">
+      <div class="airport-name">
+        OMAS
+      </div>
+      <div class="airport-code">
+        OMAS
+      </div>
+      <div class="dep-arr-label">
+        Arriving
+      </div>
+      <div class="time">
+        9:15am
+      </div>
+    </div>
+  </section>
+  <section class="place">
+    <div class="place-block">
+      <div class="place-label">
+        Group
+      </div>
+      <div class="place-value">
+        2
+      </div>
+    </div>
+    <div class="place-block">
+      <div class="place-label">
+        Seat
+      </div>
+      <div class="place-value">
+        2A
+      </div>
+    </div>
+    <div class="place-block">
+      <div class="place-label">
+        Gate
+      </div>
+      <div class="place-value">
+        B
+      </div>
+    </div>
+    <div class="qr">
+      <!-- <img src="http://www.classtools.net/QR/pics/qr.png" /> -->
+      <img src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"
+         class="qr-code img-thumbnail img-responsive">
+    </div>
+  </section>
+</div>
+
+<!-- </body> -->
+
+<style type="text/css">
+	@charset "UTF-8";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css";
+body {
+  text-align: left;
+  margin: 0px;
+}
+
+
+.ticket .name {
+  padding: 15px 10px 10px 10px;
+  height: 30px;
+  text-align: left;
+  border-top: 2px dashed lightgrey;
+  font-weight: bold;
+  color: grey;
+  font-size: 17px;
+
+}
+.ticket {
+  display: inline-block;
+  width: 350px;
+  margin: 20px;
+  background-color: #273138;
+  border-radius: 10px;
+  color: #fff;
+  font-family: Helvetica Neue;
+  font-weight: 300;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.ticket header {
+  position: relative;
+  height: 35px;
+  background-color: #1B252E;
+  padding: 10px;
+  border-radius: 10px;
+}
+.ticket header .company-name {
+  line-height: 35px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 30px;
+  position: absolute;
+  left: 75px;
+  color: black;
+}
+.ticket header .gate {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+  font-size: 12px;
+  position: absolute;
+    left: -85px;
+    top: -80px;
+}
+.ticket header:after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  border-radius: 50%;
+  box-shadow: inset 12px 0px 18px -11px rgba(0, 0, 0, 0.5);
+}
+.ticket header:before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -8px;
+  left: -8px;
+  border-radius: 50%;
+  box-shadow: inset -12px 0px 18px -11px rgba(0, 0, 0, 0.5);
+}
+.ticket .airports {
+  padding: 5px 10px 10px 10px;
+  height: 100px;
+  text-align: center;
+  position: relative;
+  border-bottom: 2px dashed #000;
+  border-top: 2px dashed lightgrey;
+
+}
+.ticket .airports .airport {
+  position: relative;
+  margin: 10px;
+  text-align: center;
+  display: inline-block;
+}
+.ticket .airports .airport .airport-name {
+  color: #29A8EB;
+  font-size: 12px;
+  font-weight: 400;
+}
+.ticket .airports .airport .airport-code {
+  font-size: 32px;
+  font-weight: 400;
+  margin: 5px 0;
+}
+.ticket .airports .airport .dep-arr-label {
+  color: #9299A0;
+  font-size: 12px;
+  font-weight: 500;
+}
+.ticket .airports .airport .time {
+  font-size: 10px;
+  color: #9299A0;
+}
+.ticket .airports .airport:first-child {
+  margin-right: 15%;
+}
+/*.ticket .airports .airport:first-child:after {
+  font-family: FontAwesome;
+  color: #353E48;
+  content: "";
+  position: absolute;
+  font-size: 55px;
+  top: calc(50% - 25px);
+  right: -150%;
+}*/
+/*.ticket .airports:after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  border-radius: 50%;
+  box-shadow: inset 12px 0px 18px -11px rgba(0, 0, 0, 0.5);
+}*/
+.ticket .airports:before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -8px;
+  left: -8px;
+  border-radius: 50%;
+  box-shadow: inset -12px 0px 18px -11px rgba(0, 0, 0, 0.5);
+}
+.ticket .place {
+  padding: 10px;
+  text-align: center;
+  height: 330px;
+}
+.ticket .place-block {
+  display: inline-block;
+  margin: 10px 30px;
+}
+.ticket .place-block .place-label {
+  color: #29A8EB;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.ticket .place-block .place-value {
+  color: #9299A0;
+  font-size: 12px;
+  font-weight: 500;
+}
+.ticket .qr {
+  width: 220px;
+  height: 220px;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.ticket .qr img {
+  width: 100%;
+  height: 100%;
+}
+
+.ticket.inverse {
+  background-color: #F8F8F8;
+}
+.ticket.inverse header {
+  background-color: grey;
+}
+.ticket.inverse .airports {
+  border-bottom-color: #D3D6DA;
+}
+.ticket.inverse .airport:first-child:after {
+  color: #D3D6DA;
+}
+.ticket.inverse .airport .airport-code {
+  color: #707884;
+  font-weight: 500;
+}
+</style>
+<!-- </html> -->

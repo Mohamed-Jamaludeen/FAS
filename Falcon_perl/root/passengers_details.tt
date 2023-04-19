@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Falcon Aviation</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.print/1.3.3/jQuery.print.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.print/1.3.3/jQuery.print.min.js"></script>
+<script src="/static/js/qrcode.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.0/bootstrap-table.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+<!-- <link href="https://fonts.googleapis.com/css2?family=FAMILY_NAME:wght@WEIGHT_OR_RANGE&display=swap" rel="stylesheet"> -->
+
+<body>
+[% INCLUDE top_nav.tt %]
+
+
+
+
+<h2>Check In</h2>
+<form id="passdetfrm" action="/checkinpass" method="post">
+<div class="container">
+<label for="lname">Passenger : [% paxdetails.surname %] </label>
+<div>
+      <div class="leftdiv">
+      <label for="lname">Sur Name</label>
+      <input type="text" name="surname" placeholder="Sur Name.." value="[% paxdetails.surname %]">  
+      <input type="hidden" name="seq_no"value="[% paxdetails.seq_no %]">  
+      <input type="hidden" name="flightid"value="[% paxdetails.flightid %]">  
+      <input type="hidden" name="crew_pax"value="[% paxdetails.crew_pax %]">  
+      <input type="hidden" name="onward_flight"value="[% paxdetails.onward_flight %]">  
+      <input type="hidden" name="destination"value="[% paxdetails.destination %]">  
+      <input type="hidden" name="final_destination"value="[% paxdetails.final_destination %]">  
+      </div>
+
+      <div class="rightdiv">
+      <label for="lname">Gender</label>
+      <select name="gender">
+        <option value="M" [% IF paxdetails.sex == "M" %]selected[% END %]>Male</option>
+        <option value="F" [% IF paxdetails.sex == "F" %]selected[% END %]>Female</option>
+      </select>
+      </div>
+
+</div>
+<!-- <input type="text" name="name" placeholder="Your name.."> -->
+<div>
+<div class="leftdiv">
+      <label for="lname">First Name</label>
+      <input type="text" name="name" placeholder="First Name..">  
+      </div>
+
+      <div class="rightdiv">
+      <label for="lname">Pax Type</label>
+      <select name="paxtype">
+        <option value="Adult">Adult</option>
+        <option value="Child">Child</option>
+        <option value="infant">Infant</option>
+      </select>
+      </div>  
+</div>
+
+<div>
+  <label for="lname" style="text-align: center;">ID Details</label>
+</div>
+
+<div>
+      <div class="leftdiv">
+      <label for="lname">Optima Number</label>
+      <input type="text" name="optimano" placeholder="Optima Number.." value="[% paxdetails.document_number %]">  
+      </div>
+
+
+</div>
+
+<div>
+      <div class="leftdiv">
+      <label for="lname">CICPA Pass</label>
+      <input type="text" name="syspano" placeholder="CICPA..">  
+      </div>
+
+      <div class="rightdiv">
+      <label for="lname">CICPA Expiry</label>
+      <input type="date" name="syspaexpiry">  
+      </div>
+
+</div>
+
+<div>
+      <div class="leftdiv">
+      <label for="lname">Company</label>
+      <select name="company">
+        <option disabled>Select One</option>
+        <option value="">ADNOC</option>
+      </select>
+      </div>
+
+      <div class="rightdiv">
+      <label for="lname">Weight</label>
+  <input type="number" name="bweight" value="85" placeholder="85">  
+      </div>
+
+</div>
+
+
+
+
+<label for="lname" style="text-align: center;">Comments</label>
+<div>
+  <div class="leftdiv">
+      <label for="lname">Passenger Comments</label>
+      <input type="textarea" name="passcomm" placeholder="Passenger Comments.." value="[% paxdetails.special_notes %]">  
+      </div>
+
+      <div class="rightdiv">
+      <label for="lname">Boarding Comments</label>
+      <input type="textarea" name="boardcomm" placeholder="Boarding Comments..">  
+      </div>
+  
+</div>
+
+<div>
+  <label for="lname">SRS Codes</label>
+  [% INCLUDE comments.tt %]
+</div>
+
+<div>
+  <label for="lname" style="text-align: center;">Baggage</label>
+  [% INCLUDE baggage.tt %]
+</div>
+
+
+
+
+<div>
+  <label for="lname" style="text-align: center;">Seat Selection</label>
+  [% INCLUDE seating_pop.tt %]
+</div>
+
+<div>
+      <div class="leftdiv">
+      <input id="contact" value="Select Seat" type="button">
+      </div>
+
+      <div class="rightdiv">
+      <input type="" name="" placeholder="Seat No" class="selseat" disabled=""> 
+      </div>
+
+</div>
+<br>
+<div hidden="">
+  
+[% INCLUDE ticket2.tt %]
+</div>
+<div style="text-align: center;">
+  <input id="print" value="Print Ticket" type="button" onclick='printData();'>
+  <!-- <input id="print" value="Print Ticket" type="button"> -->
+</div>
+
+
+</div>
+
+</form>
+</body>
+<style type="text/css">
+	body {
+  font-weight:bold;
+  font-size: large;
+}
+h1 {
+	text-align: center;
+}
+
+
+/*starts*/
+.container {
+  padding: 2rem 0rem;
+  max-width: 100%;
+}
+
+h4 {
+  margin: 2rem 0rem 1rem;
+}
+
+.table-image {
+  td,
+  th {
+    vertical-align: middle;
+  }
+}
+
+/*ends*/
+
+
+
+* {box-sizing: border-box;}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+}
+
+h2 {
+  color:#ae1328;
+  font-weight: 400;
+  text-align: center;
+}
+
+label {
+  width: 100%;
+  font-weight: larger;
+}
+
+.leftdiv {
+  display: inline-block;
+  width: 50%;
+  padding-right: 10%;
+}
+
+.rightdiv {
+  display: inline-block;
+  width: 35%;
+  padding-left: 5%;
+}
+
+.container {
+  margin: auto;
+  width:70%;
+  border: 1px solid #ae1328;
+  border-radius: 5px;
+  background-color: rgb(255 255 255 / 15%);
+  padding: 20px;
+  color:#ae1328;
+  font-size:24px;
+  animation: myAnim 2s ease 0s 1 normal forwards;
+    }
+
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(-250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 5px;
+  /*border: 1px solid rgb(0, 132, 139);*/
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  background-color: #deecf3;
+  resize: vertical;
+  color:#797d7f;
+  font-size: 17px;
+}
+
+input[type=btnSubmit] {
+ width: 100%;
+ background-color:rgb(0, 132, 139);
+  color: #b3bbc0;
+  padding: 12px 20px;
+  border: 1px solid rgb(0, 132, 139);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+input[type=btnSubmit]:hover {
+ background-color:#303233; 
+ color:rgb(0, 132, 139);
+}
+
+@media screen and (max-width: 600px) {
+.container{font-size: 17px; width:100%}
+input[type="btnSubmit"]{font-size:14px;}
+}
+
+/* comments starts*/
+#addRow {
+  margin-bottom: 2%;
+}
+
+.table td.fit,
+.table th.fit {
+  white-space: nowrap;
+  width: 1%;
+}
+
+select {
+  border: 0 !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-overflow: "";
+  cursor: pointer;
+}
+/* comments ends*/
+
+</style>
+
+<script type="text/javascript">
+  var myTable = document.getElementById("myTable");
+var tplRow = document.querySelector("#tplRow");
+var addRow = document.getElementById("addRow");
+var selMenu = document.querySelector("select");
+var count = 1;
+
+addRow.addEventListener("click", function() {
+  var tbody = document.querySelector("tbody");
+  var clone = document.importNode(tplRow.content, true);
+  var td = clone.querySelectorAll("td");
+  var opt = clone.querySelectorAll("select");
+  td[0].innerText = new Date().toLocaleDateString('de-DE');
+  opt[0].name = `employee${count}`;
+  tbody.appendChild(clone);
+  count++;
+});
+
+document.addEventListener('click', function (event) {
+  // If the clicked element doesn't have the right selector, bail
+  if (!event.target.matches('.delRow')) return;
+  // Delete parent row BUTTON -> TD -> TR
+  myTable.deleteRow(event.target.parentNode.parentNode.rowIndex);
+}, false);
+
+
+function printData()
+{
+  // e.preventDefault();
+  // alert("came in");
+  // $("#passdetform").submit();
+  document.getElementById("passdetfrm").submit();
+  var divToPrint=document.getElementById("ticket");
+  newWin= window.open("");
+  newWin.document.write(divToPrint.innerHTML);
+  newWin.print();
+  newWin.close();
+}
+
+// $('#qrcode').empty();
+
+// Set Size to Match User Input
+// $('#qrcode').css({
+// 'width' : $('.qr-size').val(),
+// 'height' : $('.qr-size').val()
+// })
+// var idval = [% document_number %];
+var idval = 190259;
+// Generate and Output QR Code
+// $('#qrcode').qrcode({width: $('.qr-size').val(),height: $('.qr-size').val(),text: $('.qr-url').val()});
+// $('#qrcode').qrcode({text: idval});
+
+</script>
+</html>

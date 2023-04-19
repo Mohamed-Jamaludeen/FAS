@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Falcon Aviation</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.0/bootstrap-table.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+<!-- <link href="https://fonts.googleapis.com/css2?family=FAMILY_NAME:wght@WEIGHT_OR_RANGE&display=swap" rel="stylesheet"> -->
+
+<body>
+[% INCLUDE top_nav.tt %]
+<h1>Upload Passengers</h1>
+<div class="tblcntr" style="padding-left: 5%">
+  <div style="display: inline-block;width: 20%;">
+    <span>Flight : [% flights.flightno %]</span>
+    <br>
+    <span>origin : [% flights.origin %]</span>
+    <br>
+    <span>destination : [% flights.destination %]</span>
+  
+  </div>
+  <div style="display: inline-block;width: 20%;">
+  <span id="blink">Departure : [% flights.departure %]</span>
+  <br>
+  <span>Arrival : [% flights.arrival %]</span>
+  </div>
+</div>
+
+<div>
+  <!-- <h1>File upload progress</h1> -->
+  <form  name="fileupload" id='sampleform' method='post' action="/uploadpass" enctype="multipart/form-data" >
+  <input type="file" id="file-uploader" name="file">
+  <input type="hidden" id="flightid" name="flightid" value="[% flights.flightid %]">
+    
+    <div id="feedback">
+      
+    </div>
+    
+    <label id="progress-label" for="progress"></label>
+    <progress id="progress" value="0" max="100"> </progress>
+  <input type="submit" name="">
+
+
+<!--   <tr>
+          <td colspan="2" ><strong>File Upload:</strong></td>
+          <td valign="top">
+            <input type="hidden" name="form_submit" value="yes">
+                <input type="file" name="file1" size="50"><br>
+            <input type="file" name="file2" size="50"><br>
+            <input type="file" name="file3" size="50"><br>
+          </td>
+        </tr> -->
+  </form>  
+  
+</div>
+
+</body>
+
+
+<script type="text/javascript">
+	const fileUploader = document.getElementById('file-uploader');
+const feedback = document.getElementById('feedback');
+const progress = document.getElementById('progress');
+
+const reader = new FileReader();
+
+fileUploader.addEventListener('change', (event) => {
+  const files = event.target.files;
+  const file = files[0];
+  reader.readAsDataURL(file);
+  
+  reader.addEventListener('progress', (event) => {
+    if (event.loaded && event.total) {
+      const percent = (event.loaded / event.total) * 100;
+      progress.value = percent;
+      document.getElementById('progress-label').innerHTML = Math.round(percent) + '%';
+      
+      if (percent === 100) {
+        // let msg = `<span style="color:green;">File <u><b>${file.name}</b></u> has been uploaded successfully.</span>`;
+        let msg = `<span style="color:green;">Upload Inprogress</span>`;
+        feedback.innerHTML = msg;
+      }
+    }
+  });
+});
+
+
+$("form#data").submit(function(e) {
+    e.preventDefault();    
+    var formData = new FormData(this);
+
+    $.ajax({
+        url: "/",
+        type: 'POST',
+        data: formData,
+        success: function (data) {
+            alert(data)
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+});
+
+
+      
+
+
+$( document ).ready(function() {
+   var blink = document.getElementById('blink');
+      setInterval(function() {
+        blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);
+      }, 1000);
+});
+    
+
+</script>
+<style type="text/css">
+	/*@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600&display=swap');*/
+	body {
+  /*margin: 2rem;*/
+  font-weight:bold;
+  font-size: large;
+}
+h1 {
+	text-align: center;
+}
+
+
+/*starts*/
+.container {
+  padding: 2rem 0rem;
+  max-width: 100%;
+}
+
+h4 {
+  margin: 2rem 0rem 1rem;
+}
+
+.table-image {
+  td,
+  th {
+    vertical-align: middle;
+  }
+}
+
+/*ends*/
+
+#blink {
+        color: #1c87c9;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: sans-serif;
+      }
+
+
+</style>
+</html>

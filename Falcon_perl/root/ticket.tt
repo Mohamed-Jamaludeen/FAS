@@ -1,0 +1,278 @@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><script type="text/javascript">
+
+	$( document ).ready(function() {
+		// myval = [% jamal %];
+		myval = 'Jamal';
+		$(".qr-code").attr("src", "https://chart.googleapis.com/chart?cht=qr&chl=" + myval + "&chs=160x160&chld=L|0");
+	});
+</script>
+
+<div id="ticket">
+	<div id="banner">
+		<div id="topbanner"></div>
+		<span id="mainbanner">
+			<img src="/static/images/logo.jpg">
+			Falcon Aviation
+		</span>
+		<!-- <span id="tearoffbanner">
+			<img src="/static/images/logo.jpg">
+			Falcon Aviation
+		</span> -->
+	</div>
+	<!-- <div id="barcode">
+		XYZASDASDXYZ
+	</div> -->
+
+	
+
+	<div id="data">
+		<div id="maindata">
+			<div class="box">
+				<span class="header">
+					Passenger Name
+				</span>
+				<span class="body">
+					Mr.Mohamed Ahmed
+				</span>
+			</div>
+			<div class="box">
+				<span class="header">
+					Flight Number
+				</span>
+				<span class="body">
+					FVS101
+				</span>
+			</div>
+			<div class="box">
+				<span class="header">
+					From
+				</span>
+				<span class="body">
+					CGN (Germany)
+				</span>
+			</div>
+			<div class="box">
+				<span class="header">
+					Date
+				</span>
+				<span class="body">
+					11 AUG 2021
+				</span>
+			</div>
+			<div class="box">
+				<span class="header">
+					To
+				</span>
+				<span class="body">
+					SYD (Australia)
+				</span>
+			</div>
+			<div class="box">
+			</div>
+			<div class="box">
+				<span class="header">
+					Gate
+				</span>
+				<span class="body">
+					B-10
+				</span>
+			</div>
+			<div class="box boarding">
+				<span class="header">
+					Boarding Time
+				</span>
+				<span class="body">
+					08:00
+				</span>
+			</div>
+			<!-- <div id="tearoffdata"> -->
+			<!-- Qr code starts -->
+<!-- <div class="container-fluid" style="position: relative;top: -35%;left: 0%"> -->
+  <!-- <div class="text-center"> -->
+    <img src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"
+         class="qr-code img-thumbnail img-responsive">
+  <!-- </div> -->
+<!-- </div> -->
+		</div>
+
+	</div>
+	<style type="text/css">
+/*	@import url("https://fonts.googleapis.com/css?family=Libre+Barcode+39");*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+/*@import url("https://fonts.googleapis.com/css?family=Merienda");*/
+
+body,
+html {
+	background: #bbbbbb;
+	height: 100%;
+	display: grid;
+}
+
+.ticket {
+	height: 20vw;
+	width: 60vw;
+	margin: auto;
+	border-radius: 2vw;
+	position: relative;
+	background: white;
+}
+
+#banner {
+	height: 11vw;
+	border-radius: 2vw;
+	border-top: 4vw solid whitesmoke;
+	font-family: "Open sans";
+	background-color: white;
+	width: 40%;
+/*	height: relative;*/
+
+}
+
+#mainbanner {
+	position: absolute;
+	top: 0.2vw;
+	left: 4.5vw;
+	font-size: 3vw;
+}
+
+#mainbanner img {
+	vertical-align: middle;
+	height: 4vw;
+	width: 4vw;
+}
+
+#tearoffbanner {
+	position: absolute;
+	top: 1.5vw;
+	left: 46.7vw;
+	font-size: 1.2vw;
+}
+
+#tearoffbanner img {
+	vertical-align: middle;
+	height: 2vw;
+	width: 2vw;
+}
+
+#barcode {
+	overflow: hidden;
+	height: 3%;
+	width: 13%;
+	position: fixed;
+	top: 10vw;
+	left: -2vw;
+	font-size: 4em;
+	font-family: "Libre Barcode 39";
+	transform: rotate(-90deg) scale(1, 2.5);
+}
+
+#holes {
+	height: 100%;
+	position: absolute;
+	top: -0.1vw;
+	left: 44vw;
+	
+
+}
+
+#holes div {
+	width: 1.8vw;
+	height: 1.8vw;
+	border-radius: 100%;
+	background: #bbbbbb;
+	margin-top: 0.5vw;
+	border: solid;
+}
+
+#data {
+	text-transform: uppercase;
+	font-size: 0.8vw;
+	font-family: "Open Sans";
+}
+
+#maindata {
+	margin: 0.5vw;
+	position: absolute;
+	width: 35vw;
+/*	height: 16vw;*/
+	top: 4vw;
+	left: 1vw;
+}
+
+#data .box {
+	width: 17vw;
+	display: inline-block;
+}
+
+#data .box .header {
+	display: block;
+}
+
+#data .box .body {
+	font-size: 20px;
+}
+
+#data .box.boarding {
+	width: 17vw;
+	bottom: -1vw;
+	left: 10.3vw;
+	position: absolute;
+	text-align: center;
+	border: 2px solid black;
+	/*margin-top: 0.3vw;
+	margin-left: 6vw;*/
+}
+#data .box.boarding .header {
+	font-size: 1.8vw;
+}
+
+#data .box.boarding .body {
+	font-size: 1.5vw;
+}
+
+#tearoffdata {
+	position: absolute;
+	width: 13vw;
+	height: 16vw;
+	top: 0vw;
+	left: 37vw;
+	font-size: 0.8vw;
+}
+
+#tearoffdata .box {
+	width: 13vw;
+	display: block;
+}
+
+#tearoffdata .box .header {
+	text-decoration: none;
+}
+#tearoffdata .box .body {
+	margin-left: 1vw;
+	font-size: 1.2vw;
+}
+
+#tearoffdata .box.seat {
+	margin-top: 0vw;
+}
+#tearoffdata .box.seat .body {
+	font-size: 2vw;
+}
+
+
+/*Qr Code starts*/
+.qr-code {
+  max-width: 200px;
+  margin: 10px;
+  position: absolute;
+    left: 80%;
+    bottom: 12%;
+}
+/*Qr Code ends*/
+
+
+
+</style>
+</div>
+

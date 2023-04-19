@@ -1,0 +1,111 @@
+<!-- Dummy tables Starts -->
+<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Seq</th>
+                <th>Seat</th>
+                <th>Surname</th>
+                <th>Name</th>
+                <th>Group</th>
+                <th>Flight</th>
+                <th>Checked-In</th>
+                <th>Selected</th>
+            </tr>
+        </thead>
+ 
+
+ 
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td></td>
+                <td>Al</td>
+                <td>Rasheed</td>
+                <td></td>
+                <td>FVS 103</td>
+                <td><input type="checkbox" name=""></td>
+                <td><input type="checkbox" name=""></td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td></td>
+                <td>Al</td>
+                <td>Rasheed</td>
+                <td></td>
+                <td>FVS 103</td>
+                <td><input type="checkbox" name=""></td>
+                <td><input type="checkbox" name=""></td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td></td>
+                <td>Al</td>
+                <td>Rasheed</td>
+                <td></td>
+                <td>FVS 103</td>
+                <td><input type="checkbox" name=""></td>
+                <td><input type="checkbox" name=""></td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td></td>
+                <td>Al</td>
+                <td>Rasheed</td>
+                <td></td>
+                <td>FVS 103</td>
+                <td><input type="checkbox" name=""></td>
+                <td><input type="checkbox" name=""></td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td></td>
+                <td>Al</td>
+                <td>Rasheed</td>
+                <td></td>
+                <td>FVS 103</td>
+                <td><input type="checkbox" name=""></td>
+                <td><input type="checkbox" name=""></td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td></td>
+                <td>Al</td>
+                <td>Rasheed</td>
+                <td></td>
+                <td>FVS 103</td>
+                <td><input type="checkbox" name=""></td>
+                <td><input type="checkbox" name=""></td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td></td>
+                <td>Al</td>
+                <td>Rasheed</td>
+                <td></td>
+                <td>FVS 103</td>
+                <td><input type="checkbox" name=""></td>
+                <td><input type="checkbox" name=""></td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td></td>
+                <td>Al</td>
+                <td>Rasheed</td>
+                <td></td>
+                <td>FVS 103</td>
+                <td><input type="checkbox" name=""></td>
+                <td><input type="checkbox" name=""></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td></td>
+                <td>Al</td>
+                <td>Rasheed</td>
+                <td></td>
+                <td>FVS 103</td>
+                <td><input type="checkbox" name=""></td>
+                <td><input type="checkbox" name=""></td>
+            </tr>
+        </tbody>
+    </table>
+<!-- Dummy tables ends -->

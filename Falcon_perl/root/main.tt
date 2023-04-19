@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Falcon Aviation</title>
+</head>
+<script src="static/js/jquery.js"></script>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<body class="bodcls">
+
+<section class="area">
+  <div class="div1 grow"><a href="/flights"></a></div>
+  <div class="div2"><a href="/"></a></div>
+  <div class="div3"><a href="/"></a></div>
+  <div class="div4"><a href="/"></a></div>
+  <div class="div5"><a href="/"></a></div>
+  <div class="div6"><a href="/"></a></div>
+</section>
+
+</body>
+
+<style type="text/css">
+body {
+  /*height: 100vh;*/
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+div {
+  	width: 400px;
+    height: 300px;
+    padding: 0px;
+    margin: 65px;
+}
+.area {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+div {
+  	
+    border-radius: 20px;
+}
+
+div:nth-child(1) {
+	background: aqua;
+    background-image: url(static/images/checkin.png);
+    background-size: 175px;
+    background-repeat: no-repeat;
+     background-position: center;
+    box-shadow: 0 8px 8px -4px lightblue;
+    &.grow {
+        transition: all .2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
+    
+}
+
+/*.grow { 
+transition: all .2s ease-in-out; 
+}*/
+div:nth-child(2) {
+  	background: yellow;
+    background-image: url(static/images/flight.png);
+    background-size: 285px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 8px 8px -4px lightblue;
+}
+div:nth-child(3) {
+  	background: lightgreen;
+    background-image: url(static/images/arrival.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 8px 8px -4px lightblue;
+}
+div:nth-child(4) {
+  	background: green;
+    background-image: url(static/images/flighttime.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 8px 8px -4px lightblue;
+}div:nth-child(5) {
+  	background: violet;
+    background-image: url(static/images/connecting.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 8px 8px -4px lightblue;
+}div:nth-child(6) {
+  	background: indigo;
+    background-image: url(static/images/settings.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 8px 8px -4px lightblue;
+}
+
+/*div:nth-child(1) {
+  background: #eee;
+  box-shadow: 0 8px 8px -4px lightblue;
+}
+div:nth-child(2) {
+  border-radius: 50%;
+  box-shadow: 0 0 50px #ccc;
+}
+div:nth-child(3) {
+  box-shadow: 0 -5px 3px -3px black, 0 5px 3px -3px black;
+}*/
+
+</style>
+
+<script type="text/javascript">
+$(".div1").click(function() {
+window.location = $(this).find("a").attr("href"); 
+return false;
+});
+
+</script>
+</html>

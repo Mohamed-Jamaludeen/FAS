@@ -1,0 +1,158 @@
+<div class="baggage">
+<div class="leftdiv">
+	<label>Cabbin Baggage</label> 
+</div>
+<div style="display: inline-block;">
+	<input type="" name="" placeholder="Total" class="total" disabled="">
+</div>
+	
+<div class="col-md-12" style="margin-left: -15px">
+  <div class="table-responsive">
+    <table id="test-table" class="table table-condensed">
+      <thead>
+        <tr>
+          <th>Tag No</th>
+          <th>Weight</th>
+          <th>Gate Bag</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody id="test-body">
+        <tr id="row0">
+          <td>
+            <input name='from_value0' value='000010' type='text' class='form-control' />
+          </td>
+          <td>
+            <input name='to_value0' min-value='00' type='number' class='form-control input-md' id="sum" />
+          </td>
+          <td>
+            <!-- <input name='to_value0' value='500' type='text' class='form-control input-md' /> -->
+            <input name='gatebag' value='false' type='checkbox' class="tick" />
+          </td>
+          <td>
+            <input class='delete-row btn btn-primary' type='button' value='Delete' />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <input id='add-row' class='btn btn-primary' type='button' value='Add' />
+  </div>
+</div>
+
+
+	<div class="leftdiv">
+	<label>Hand Baggage</label> 
+</div>
+	<div style="display: inline-block;">
+	<input type="" name="" placeholder="Total" class="total1" disabled="">
+</div>
+	<div class="col-md-12" style="margin-left: -15px">
+  <div class="table-responsive">
+    <table id="test-table1" class="table table-condensed">
+      <thead>
+        <tr>
+          <th>Weight</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody id="test-body1">
+        <tr id="row0">
+          <td>
+            <input name='to_value0' min-value='00' type='number' class='form-control input-md' id="sum1" />
+          </td>
+          <td>
+            <input class='delete-row1 btn btn-primary' type='button' value='Delete' />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <input id='add-row1' class='btn btn-primary' type='button' value='Add' />
+  </div>
+</div>
+</div>
+
+<style type="text/css">
+#test-table thead tr th{
+	border: 1px solid;
+}
+
+#test-body tr td{
+	border: 1px solid;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: grey;
+  color: white;
+}
+
+.tick {
+	margin: 35%;
+	width: 20px;
+    height: 20px;
+}
+</style>
+
+<script type="text/javascript">
+
+	$( "#sum" ).change(function() {
+  // alert( $("#sum").val() );
+  // $(".total").html($("#sum").val);
+  var oldval = $("#sum").val();
+  $('.total').val(oldval);
+});
+	  // Add row
+  var row=1;
+  $(document).on("click", "#add-row", function () {
+  var new_row = '<tr id="row' + row + '"><td><input name="from_value' + row + '" type="text" class="form-control" /></td><td><input name="to_value' + row + '" type="number" class="form-control"  id="sum"/></td><td><input name="gatebag" value="false" type="checkbox" class="tick" /></td><td><input class="delete-row btn btn-primary" type="button" value="Delete" /></td></tr>';
+    // alert(new_row);
+
+  $('#test-body').append(new_row);
+  row++;
+  return false;
+  });
+  
+  // Remove criterion
+  $(document).on("click", ".delete-row", function () {
+  //  alert("deleting row#"+row);
+    if(row>1) {
+      $(this).closest('tr').remove();
+      row--;
+    }
+  return false;
+  });
+
+
+
+  // Hand baggage starts
+
+	$( "#sum1" ).change(function() {
+  // alert( $("#sum").val() );
+  // $(".total").html($("#sum").val);
+  var oldval1 = $("#sum1").val();
+  $('.total1').val(oldval1);
+});
+
+	  // Add row
+  var row1=1;
+  $(document).on("click", "#add-row1", function () {
+  var new_row1 = '<tr id="row1' + row1 + '"><td><input name="to_value' + row1 + '" type="number" class="form-control"  id="sum1"/></td><td><input class="delete-row btn btn-primary" type="button" value="Delete" /></td></tr>';
+    // alert(new_row);
+
+  $('#test-body1').append(new_row1);
+  row1++;
+  return false;
+  });
+  
+  // Remove criterion
+  $(document).on("click", ".delete-row1", function () {
+  //  alert("deleting row#"+row);
+    if(row1>1) {
+      $(this).closest('tr').remove();
+      row1--;
+    }
+  return false;
+  });
+
+</script>
